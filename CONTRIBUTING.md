@@ -20,7 +20,7 @@ Requirements per entry:
 - Set `subject` on the page itself, not just here. A directory-side guess
   (`"subject_declared": false`) is a stopgap for pages predating the field.
 - No page content. Entries carry pointers and a few cached facts for
-  browsing; `check.py` rejects `issues`, `practices`, and `bite`.
+  browsing; `check.py` rejects `issues`, `practices`, and `pitfall`.
 
 ## What does not belong here
 

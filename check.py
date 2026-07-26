@@ -68,7 +68,7 @@ def check(path):
         for k in set(e) - ENTRY_KNOWN:
             warnings.append(f"{where}: unknown key {k!r}")
         # a directory indexes bundles; it must never carry page content
-        for banned in ("issues", "practices", "page_content", "bite"):
+        for banned in ("issues", "practices", "page_content", "pitfall", "bite"):
             if banned in e:
                 errors.append(f"{where}: carries {banned!r} — a directory indexes bundles, "
                               f"it does not hold page content (§10)")

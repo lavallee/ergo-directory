@@ -24,7 +24,7 @@ The obvious worry is eight competing ACS pages. It isn't a problem to solve.
 
 A newsroom's ACS page, a housing nonprofit's, and a state agency's will
 legitimately disagree — about which issues are `core`, about which practices
-apply, about what the one-line `bite` is — because their *questions* differ.
+apply, about what the one-line `pitfall` is — because their *questions* differ.
 An ergo `[practice]` is by definition a decision that reasonable teams make
 differently. Collapsing them into one "canonical" page destroys the thing
 that makes them worth having.
