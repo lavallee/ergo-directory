@@ -7,7 +7,7 @@
     {
       "subject": "https://www.nj.gov/education/finance/fp/acfr/",
       "subject_normalized": "https://nj.gov/education/finance/fp/acfr",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "auditor-management-reports",
       "title": "NJ District Auditor's Management Reports",
@@ -28,7 +28,7 @@
     {
       "subject": "https://www.nj.gov/education/doedata/cs/index.shtml",
       "subject_normalized": "https://nj.gov/education/doedata/cs",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "certificated-staff",
       "title": "NJDOE Certificated Staff",
@@ -49,7 +49,7 @@
     {
       "subject": "https://njschooldata.fyi/data/district-source-notes/",
       "subject_normalized": "https://njschooldata.fyi/data/district-source-notes",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "district-source-notes",
       "title": "District source notes (knowledge layer)",
@@ -68,7 +68,7 @@
     {
       "subject": "https://www.nj.gov/education/title1/accountability/",
       "subject_normalized": "https://nj.gov/education/title1/accountability",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "essa-accountability-workbooks",
       "title": "NJDOE ESSA Accountability Calculation Workbooks",
@@ -91,7 +91,7 @@
     {
       "subject": "https://www.nj.gov/education/doedata/enr/",
       "subject_normalized": "https://nj.gov/education/doedata/enr",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "fall-enrollment",
       "title": "NJ DOE Fall Enrollment Reports",
@@ -111,9 +111,9 @@
       }
     },
     {
-      "subject": "https://www.nj.gov/education/specialed/monitor/ideapublicdata/docs/2025_618data/2025IDEA618PublicReporting_ClassificationRates.xlsx",
-      "subject_normalized": "https://nj.gov/education/specialed/monitor/ideapublicdata/docs/2025_618data/2025IDEA618PublicReporting_ClassificationRates.xlsx",
-      "subject_declared": false,
+      "subject": "https://www.nj.gov/education/specialed/monitor/ideapublicdata/",
+      "subject_normalized": "https://nj.gov/education/specialed/monitor/ideapublicdata",
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "idea-classification-rates",
       "title": "NJDOE IDEA Section 618 Classification Rates",
@@ -134,7 +134,7 @@
     {
       "subject": "https://www.nj.gov/education/doedata/ncs/index.shtml",
       "subject_normalized": "https://nj.gov/education/doedata/ncs",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "noncertificated-staff",
       "title": "NJDOE Non-Certificated Staff",
@@ -155,7 +155,7 @@
     {
       "subject": "https://www.nj.gov/education/spr/",
       "subject_normalized": "https://nj.gov/education/spr",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "spr",
       "title": "NJ School Performance Reports",
@@ -175,9 +175,9 @@
       }
     },
     {
-      "subject": "https://www.nj.gov/education/sprreports/download/DataFiles/2024-2025/Database_DistrictStateDetail.xlsx",
-      "subject_normalized": "https://nj.gov/education/sprreports/download/DataFiles/2024-2025/Database_DistrictStateDetail.xlsx",
-      "subject_declared": false,
+      "subject": "https://www.nj.gov/education/spr/",
+      "subject_normalized": "https://nj.gov/education/spr",
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "spr-discipline-safety",
       "title": "NJDOE SPR Discipline and Safety",
@@ -199,7 +199,7 @@
     {
       "subject": "https://www.nj.gov/education/stateaid/",
       "subject_normalized": "https://nj.gov/education/stateaid",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "state-aid",
       "title": "NJDOE K-12 State Aid (GBM District Details)",
@@ -219,7 +219,7 @@
     {
       "subject": "https://www.nj.gov/education/guide/",
       "subject_normalized": "https://nj.gov/education/guide",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "tges-fund-balance",
       "title": "NJDOE TGES Fund Balance (Indicators 20 & 21)",
@@ -239,7 +239,7 @@
     {
       "subject": "https://www.nj.gov/education/budget/ufb/index.shtml",
       "subject_normalized": "https://nj.gov/education/budget/ufb",
-      "subject_declared": false,
+      "subject_declared": true,
       "bundle": "https://njschooldata.fyi/data/ergo/",
       "slug": "ufb",
       "title": "NJDOE User-Friendly Budgets",
