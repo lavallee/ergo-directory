@@ -5,6 +5,48 @@
   "updated": "2026-07-26",
   "entries": [
     {
+      "subject": "https://www.nj.gov/education/finance/fp/acfr/",
+      "subject_normalized": "https://nj.gov/education/finance/fp/acfr",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "auditor-management-reports",
+      "title": "NJ District Auditor's Management Reports",
+      "publisher": "NJ Department of Education, Office of Fiscal Accountability and Compliance",
+      "updated": "2026-07-21",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "district_code",
+          "report_id",
+          "canonical_line_code",
+          "check_id"
+        ]
+      }
+    },
+    {
+      "subject": "https://www.nj.gov/education/doedata/cs/index.shtml",
+      "subject_normalized": "https://nj.gov/education/doedata/cs",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "certificated-staff",
+      "title": "NJDOE Certificated Staff",
+      "publisher": "New Jersey Department of Education",
+      "updated": "2026-07-22",
+      "years": "2020-21 through 2025-26",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "school_year",
+          "district_code",
+          "staff_role"
+        ]
+      }
+    },
+    {
       "subject": "https://njschooldata.fyi/data/district-source-notes/",
       "subject_normalized": "https://njschooldata.fyi/data/district-source-notes",
       "subject_declared": false,
@@ -13,13 +55,36 @@
       "title": "District source notes (knowledge layer)",
       "publisher": "njschooldata (curated from public records)",
       "updated": "2026-07-10",
-      "years": "2026",
+      "years": "2026 (dates of the underlying statements/documents)",
       "recognizes": {
         "domains": [
           "njschooldata.fyi"
         ],
         "columns": [
           "district_code"
+        ]
+      }
+    },
+    {
+      "subject": "https://www.nj.gov/education/title1/accountability/",
+      "subject_normalized": "https://nj.gov/education/title1/accountability",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "essa-accountability-workbooks",
+      "title": "NJDOE ESSA Accountability Calculation Workbooks",
+      "publisher": "NJ Department of Education",
+      "updated": "2026-07-22",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "school_year",
+          "county_code",
+          "district_code",
+          "school_code",
+          "student_group_id",
+          "metric_id"
         ]
       }
     },
@@ -32,7 +97,7 @@
       "title": "NJ DOE Fall Enrollment Reports",
       "publisher": "NJ Dept. of Education",
       "updated": "2026-07-21",
-      "years": "1998-99 → 2025-26",
+      "years": "1998-99 → 2025-26 (28 yrs)",
       "recognizes": {
         "domains": [
           "nj.gov"
@@ -42,6 +107,48 @@
           "district_code",
           "school_code",
           "school_year"
+        ]
+      }
+    },
+    {
+      "subject": "https://www.nj.gov/education/specialed/monitor/ideapublicdata/docs/2025_618data/2025IDEA618PublicReporting_ClassificationRates.xlsx",
+      "subject_normalized": "https://nj.gov/education/specialed/monitor/ideapublicdata/docs/2025_618data/2025IDEA618PublicReporting_ClassificationRates.xlsx",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "idea-classification-rates",
+      "title": "NJDOE IDEA Section 618 Classification Rates",
+      "publisher": "NJ Department of Education, Office of Special Education",
+      "updated": "2026-07-21",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "reference_date",
+          "district_code",
+          "category_id",
+          "metric_id"
+        ]
+      }
+    },
+    {
+      "subject": "https://www.nj.gov/education/doedata/ncs/index.shtml",
+      "subject_normalized": "https://nj.gov/education/doedata/ncs",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "noncertificated-staff",
+      "title": "NJDOE Non-Certificated Staff",
+      "publisher": "New Jersey Department of Education",
+      "updated": "2026-07-22",
+      "years": "2020-21 through 2025-26",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "school_year",
+          "district_code",
+          "staff_role"
         ]
       }
     },
@@ -54,7 +161,7 @@
       "title": "NJ School Performance Reports",
       "publisher": "NJ Dept. of Education, Office of Performance Reports",
       "updated": "2026-07-10",
-      "years": "2015-16 → 2024-25",
+      "years": "2015-16 → 2024-25 (trend tabs post-COVID only — see spr/trend-tabs-post-covid-only)",
       "recognizes": {
         "domains": [
           "nj.gov"
@@ -68,6 +175,28 @@
       }
     },
     {
+      "subject": "https://www.nj.gov/education/sprreports/download/DataFiles/2024-2025/Database_DistrictStateDetail.xlsx",
+      "subject_normalized": "https://nj.gov/education/sprreports/download/DataFiles/2024-2025/Database_DistrictStateDetail.xlsx",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "spr-discipline-safety",
+      "title": "NJDOE SPR Discipline and Safety",
+      "publisher": "NJ Department of Education, Office of Performance Reports",
+      "updated": "2026-07-22",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "school_year",
+          "district_code",
+          "tab_id",
+          "dimension_label",
+          "metric_id"
+        ]
+      }
+    },
+    {
       "subject": "https://www.nj.gov/education/stateaid/",
       "subject_normalized": "https://nj.gov/education/stateaid",
       "subject_declared": false,
@@ -76,7 +205,7 @@
       "title": "NJDOE K-12 State Aid (GBM District Details)",
       "publisher": "New Jersey Department of Education, Office of School Finance",
       "updated": "2026-07-12",
-      "years": "2023-24 → 2026-27",
+      "years": "2023-24 → 2026-27 (FY24-FY27, 4 yrs)",
       "recognizes": {
         "domains": [
           "nj.gov"
@@ -96,7 +225,7 @@
       "title": "NJDOE TGES Fund Balance (Indicators 20 & 21)",
       "publisher": "New Jersey Department of Education",
       "updated": "2026-07-12",
-      "years": "2020-21 → 2023-24",
+      "years": "2020-21 → 2023-24 (4 school years, from 3 report editions: 2023, 2024, 2025)",
       "recognizes": {
         "domains": [
           "nj.gov"
