@@ -1,0 +1,132 @@
+{
+  "ergo_directory": "1",
+  "name": "ergo default directory",
+  "description": "Public ergo data pages, indexed by subject. Entries point at each publisher's own bundle; this directory holds no page content.",
+  "updated": "2026-07-26",
+  "entries": [
+    {
+      "subject": "https://njschooldata.fyi/data/district-source-notes/",
+      "subject_normalized": "https://njschooldata.fyi/data/district-source-notes",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "district-source-notes",
+      "title": "District source notes (knowledge layer)",
+      "publisher": "njschooldata (curated from public records)",
+      "updated": "2026-07-10",
+      "years": "2026",
+      "recognizes": {
+        "domains": [
+          "njschooldata.fyi"
+        ],
+        "columns": [
+          "district_code"
+        ]
+      }
+    },
+    {
+      "subject": "https://www.nj.gov/education/doedata/enr/",
+      "subject_normalized": "https://nj.gov/education/doedata/enr",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "fall-enrollment",
+      "title": "NJ DOE Fall Enrollment Reports",
+      "publisher": "NJ Dept. of Education",
+      "updated": "2026-07-21",
+      "years": "1998-99 → 2025-26",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "county_code",
+          "district_code",
+          "school_code",
+          "school_year"
+        ]
+      }
+    },
+    {
+      "subject": "https://www.nj.gov/education/spr/",
+      "subject_normalized": "https://nj.gov/education/spr",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "spr",
+      "title": "NJ School Performance Reports",
+      "publisher": "NJ Dept. of Education, Office of Performance Reports",
+      "updated": "2026-07-10",
+      "years": "2015-16 → 2024-25",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "county_code",
+          "district_code",
+          "school_code",
+          "school_year"
+        ]
+      }
+    },
+    {
+      "subject": "https://www.nj.gov/education/stateaid/",
+      "subject_normalized": "https://nj.gov/education/stateaid",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "state-aid",
+      "title": "NJDOE K-12 State Aid (GBM District Details)",
+      "publisher": "New Jersey Department of Education, Office of School Finance",
+      "updated": "2026-07-12",
+      "years": "2023-24 → 2026-27",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "fiscal_year",
+          "district_code"
+        ]
+      }
+    },
+    {
+      "subject": "https://www.nj.gov/education/guide/",
+      "subject_normalized": "https://nj.gov/education/guide",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "tges-fund-balance",
+      "title": "NJDOE TGES Fund Balance (Indicators 20 & 21)",
+      "publisher": "New Jersey Department of Education",
+      "updated": "2026-07-12",
+      "years": "2020-21 → 2023-24",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "fiscal_year",
+          "district_code"
+        ]
+      }
+    },
+    {
+      "subject": "https://www.nj.gov/education/budget/ufb/index.shtml",
+      "subject_normalized": "https://nj.gov/education/budget/ufb",
+      "subject_declared": false,
+      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "slug": "ufb",
+      "title": "NJDOE User-Friendly Budgets",
+      "publisher": "New Jersey Department of Education, User Friendly Budgets",
+      "updated": "2026-07-12",
+      "years": "2019-20 → 2025-26",
+      "recognizes": {
+        "domains": [
+          "nj.gov"
+        ],
+        "columns": [
+          "budget_year",
+          "county_code",
+          "district_code"
+        ]
+      }
+    }
+  ]
+}
