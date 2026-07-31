@@ -9,8 +9,28 @@ as they like.
 
 ## What is in here
 
-One file: [`directory.json`](directory.json). Each entry points at a
-publisher's own served bundle.
+- [`directory.json`](directory.json) — the index. Every entry points at
+  wherever its page actually lives.
+- [`pages/`](pages) — the pages this directory is the **home** of.
+
+An entry is one of two kinds:
+
+| | canonical page lives | corrections go to |
+|---|---|---|
+| **indexed** | the publisher's own repository | that repository |
+| **hosted** | here, in `pages/` | here |
+
+Hosting exists because of a case an index alone cannot serve. Most datasets'
+publishers will never write a page. The projects that do are very often
+private — a data team's repository holds more than its documentation — and a
+public bundle served from a private repository is **published but
+unpatchable**: anyone can read the page, nobody can fix it, and no one else
+can ever improve it.
+
+A page nobody can patch is a document, not a commons. So the default runs
+this way: **a page is canonical here unless its author can accept corrections
+publicly.** A public repository that takes pull requests keeps its own page
+and we index it. Everyone else contributes the page itself.
 
 **Entries are pointers** — subject, bundle URL, `contribute`, and a few
 cached facts for browsing. The rule that matters:

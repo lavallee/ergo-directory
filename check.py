@@ -20,7 +20,9 @@ ENTRY_KNOWN = {
 }
 # Pages this directory is itself the home of are served from here. Any other
 # entry naming us in `contribute` is claiming a home it does not have.
-SELF = ("github.com/lavallee/ergo-directory", "lavallee.github.io/ergo-directory")
+SELF = ("github.com/lavallee/ergo-directory", "lavallee.github.io/ergo-directory",
+        "raw.githubusercontent.com/lavallee/ergo-directory")
+PAGES = Path(__file__).parent / "pages"
 RECOGNIZES_KNOWN = {"domains", "filenames", "columns"}
 URL = re.compile(r"^https?://\S+$")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -111,6 +113,47 @@ def check(path):
     return errors, warnings, clusters
 
 
+def check_hosted(entries, path):
+    """Pages this directory is the home of (ergo SPEC §10).
+
+    A hosted page must exist here, must be the only copy of itself, and must
+    not shadow a page that is canonical somewhere else.
+    """
+    errors, warnings = [], []
+    hosted, indexed = {}, {}
+    for e in entries:
+        if not isinstance(e, dict):
+            continue
+        slug = str(e.get("slug") or "")
+        key = (normalize_subject(str(e.get("subject") or "")), slug)
+        (hosted if any(s in str(e.get("bundle") or "") for s in SELF) else indexed)[key] = e
+
+    for key, e in hosted.items():
+        slug = key[1]
+        if not slug:
+            errors.append(f"{path}: a hosted entry needs a slug — it names the file here")
+            continue
+        f = PAGES / f"{slug}.md"
+        if not f.exists():
+            errors.append(f"{path}: entry {slug!r} says this directory hosts it, "
+                          f"but pages/{slug}.md does not exist")
+        if key in indexed:
+            errors.append(f"{path}: {slug!r} is hosted here AND indexed at "
+                          f"{indexed[key].get('bundle')} — one home per page. Either the "
+                          "publisher keeps it and we index, or we hold it and they do not")
+        if not any(s in str(e.get("contribute") or "") for s in SELF):
+            errors.append(f"{path}: we host {slug!r} but its contribute does not point "
+                          "here — a hosted page's corrections are ours to take")
+
+    for f in sorted(PAGES.glob("*.md")) if PAGES.is_dir() else []:
+        if f.name == "INDEX.md":
+            continue
+        if not any(k[1] == f.stem for k in hosted):
+            warnings.append(f"pages/{f.name}: no entry in {path} points at it — "
+                            "a hosted page nobody can find is not hosted, it is stored")
+    return errors, warnings
+
+
 def report_clusters(clusters):
     shared = {k: v for k, v in clusters.items() if len(v) > 1}
     if shared:
@@ -139,8 +182,13 @@ def main(argv):
     all_err, all_warn, merged = [], [], defaultdict(list)
     for p in paths:
         e, w, c = check(p)
-        all_err += e
-        all_warn += w
+        try:
+            entries = json.loads(Path(p).read_text(encoding="utf-8")).get("entries") or []
+        except (OSError, json.JSONDecodeError):
+            entries = []
+        he, hw = check_hosted(entries, p)
+        all_err += e + he
+        all_warn += w + hw
         for k, v in c.items():
             merged[k] += v
     for m in all_err:

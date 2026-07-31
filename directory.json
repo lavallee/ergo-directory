@@ -2,7 +2,7 @@
   "ergo_directory": "1",
   "name": "ergo default directory",
   "description": "Public ergo data pages, indexed by subject. Entries point at each publisher's own bundle; this directory holds no page content.",
-  "updated": "2026-07-26",
+  "updated": "2026-07-31",
   "entries": [
     {
       "subject": "https://www.nj.gov/education/finance/fp/acfr/",
@@ -156,7 +156,7 @@
       "subject": "https://www.nj.gov/education/spr/",
       "subject_normalized": "https://nj.gov/education/spr",
       "subject_declared": true,
-      "bundle": "https://njschooldata.fyi/data/ergo/",
+      "bundle": "https://raw.githubusercontent.com/lavallee/ergo-directory/main/pages/",
       "slug": "spr",
       "title": "NJ School Performance Reports",
       "publisher": "NJ Dept. of Education, Office of Performance Reports",
@@ -172,7 +172,8 @@
           "school_code",
           "school_year"
         ]
-      }
+      },
+      "contribute": "https://github.com/lavallee/ergo-directory/issues"
     },
     {
       "subject": "https://www.nj.gov/education/spr/",

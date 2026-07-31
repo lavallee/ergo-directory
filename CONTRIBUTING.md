@@ -36,17 +36,31 @@ served elsewhere is an error, not a warning.
 It is the reason this directory can be useful without becoming a fork of
 everything in it.
 
-## Pages with no other home
+## Contributing the page itself
 
-The rule above stops us patching someone else's page. It does not stop us
-being the home of a page that has none — and most datasets have none, because
-most publishers will never write one and most projects that could are private.
+If your repository is private, a served bundle is *published but unpatchable* —
+readable by anyone, fixable by no one. Contribute the page here instead, and it
+becomes the canonical copy:
 
-If you have documented a public dataset and cannot serve a bundle yourself,
-open an issue before opening a PR. A page hosted here is not structurally
-special: its `bundle` and `contribute` are both this repository, because this
-really is where it lives. What we will not do is hold a second copy of a page
-that already has a home somewhere else.
+1. `python3 tools/ergo.py publish <pages-dir> --dir <out> --base-url <url>` —
+   the public projection, with internal regions and repo-pointing fields
+   removed. **Read it before you send it.** The projection strips known
+   internal fields; it cannot know that a sentence in your lede names a path
+   in your private tree.
+2. Open a PR adding `<slug>.md` to `pages/` and an entry to `directory.json`
+   whose `bundle` is
+   `https://raw.githubusercontent.com/lavallee/ergo-directory/main/pages/`
+   and whose `contribute` is this repository's issues.
+3. In your own copy, record `[[dataset.derived_from]]` with that URL, today's
+   date, and the `hash` — `ergo diverge` prints it.
+
+Afterwards `ergo diverge` keeps the two in step: what the canonical page has
+gained since you took it, and what your copy carries that it does not. The
+second list is what you owe back. Your private copy stays the working copy;
+the public one stays the copy anyone can fix.
+
+`check.py` enforces the rest: a hosted entry must have its file in `pages/`,
+must name us in `contribute`, and must not also be indexed somewhere else.
 
 **When a publisher takes over.** If someone starts serving their own bundle
 for a dataset we host, the entry's `bundle` and `contribute` change to theirs
