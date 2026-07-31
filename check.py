@@ -16,8 +16,11 @@ from pathlib import Path
 ENTRY_REQUIRED = ("subject", "bundle")
 ENTRY_KNOWN = {
     "subject", "subject_normalized", "subject_declared", "bundle", "slug",
-    "title", "publisher", "updated", "years", "recognizes",
+    "title", "publisher", "updated", "years", "recognizes", "contribute",
 }
+# Pages this directory is itself the home of are served from here. Any other
+# entry naming us in `contribute` is claiming a home it does not have.
+SELF = ("github.com/lavallee/ergo-directory", "lavallee.github.io/ergo-directory")
 RECOGNIZES_KNOWN = {"domains", "filenames", "columns"}
 URL = re.compile(r"^https?://\S+$")
 DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -62,7 +65,7 @@ def check(path):
         for f in ENTRY_REQUIRED:
             if not str(e.get(f) or "").strip():
                 errors.append(f"{where}: missing required field: {f}")
-        for f in ("subject", "bundle"):
+        for f in ("subject", "bundle", "contribute"):
             if e.get(f) and not URL.match(str(e[f])):
                 errors.append(f"{where}: {f} must be an http(s) URL, got {e[f]!r}")
         for k in set(e) - ENTRY_KNOWN:
@@ -72,6 +75,19 @@ def check(path):
             if banned in e:
                 errors.append(f"{where}: carries {banned!r} — a directory indexes bundles, "
                               f"it does not hold page content (§10)")
+        # One home per page (§10): corrections go to whoever serves the bytes.
+        # We may name ourselves only for a page we actually host.
+        contribute, bundle = str(e.get("contribute") or ""), str(e.get("bundle") or "")
+        if contribute and any(s in contribute for s in SELF) and not any(s in bundle for s in SELF):
+            errors.append(f"{where}: contribute points here, but the bundle is served "
+                          f"elsewhere ({bundle}) — corrections belong to whoever serves "
+                          "the page. A directory that accepts patches to other people's "
+                          "pages becomes a fork of every page in it")
+        if not contribute:
+            warnings.append(f"{where}: no contribute — a reader who finds a mistake "
+                            "has nowhere to report it; set it on the page's manifest "
+                            "and regenerate")
+
         rec = e.get("recognizes")
         if rec is not None:
             if not isinstance(rec, dict):

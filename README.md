@@ -12,11 +12,20 @@ as they like.
 One file: [`directory.json`](directory.json). Each entry points at a
 publisher's own served bundle.
 
-**The directory holds no page content.** Entries are pointers — subject,
-bundle URL, and a few cached facts for browsing. That constraint is the whole
-design. A directory that accepted content patches would become a fork of every
-page in it, and corrections would stop flowing to the publishers who own them.
-So: **corrections to a page go to that page's repo, never here.**
+**Entries are pointers** — subject, bundle URL, `contribute`, and a few
+cached facts for browsing. The rule that matters:
+
+> **One home per page.** Exactly one place accepts corrections to a page, and
+> it is the place that serves its bytes.
+
+So corrections to a page go where its `contribute` says, which is almost
+always its own repository and not here. `check.py` enforces it: an entry
+naming this repository while its bundle is served elsewhere is an error.
+
+That is what stops a directory becoming a fork of every page in it. It also
+means we *can* host a page that has no other home — most datasets have none —
+without breaking anything, because a hosted page's `contribute` really is this
+repository. See CONTRIBUTING.
 
 ## Several pages will document the same dataset. That is correct.
 
