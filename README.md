@@ -9,14 +9,43 @@ as they like.
 
 ## What is in here
 
-One file: [`directory.json`](directory.json). Each entry points at a
-publisher's own served bundle.
+- [`directory.json`](directory.json) — the index. Every entry points at
+  wherever its page actually lives.
+- [`pages/`](pages) — the pages this directory is the **home** of.
 
-**The directory holds no page content.** Entries are pointers — subject,
-bundle URL, and a few cached facts for browsing. That constraint is the whole
-design. A directory that accepted content patches would become a fork of every
-page in it, and corrections would stop flowing to the publishers who own them.
-So: **corrections to a page go to that page's repo, never here.**
+An entry is one of two kinds:
+
+| | canonical page lives | corrections go to |
+|---|---|---|
+| **indexed** | the publisher's own repository | that repository |
+| **hosted** | here, in `pages/` | here |
+
+Hosting exists because of a case an index alone cannot serve. Most datasets'
+publishers will never write a page. The projects that do are very often
+private — a data team's repository holds more than its documentation — and a
+public bundle served from a private repository is **published but
+unpatchable**: anyone can read the page, nobody can fix it, and no one else
+can ever improve it.
+
+A page nobody can patch is a document, not a commons. So the default runs
+this way: **a page is canonical here unless its author can accept corrections
+publicly.** A public repository that takes pull requests keeps its own page
+and we index it. Everyone else contributes the page itself.
+
+**Entries are pointers** — subject, bundle URL, `contribute`, and a few
+cached facts for browsing. The rule that matters:
+
+> **One home per page.** Exactly one place accepts corrections to a page, and
+> it is the place that serves its bytes.
+
+So corrections to a page go where its `contribute` says, which is almost
+always its own repository and not here. `check.py` enforces it: an entry
+naming this repository while its bundle is served elsewhere is an error.
+
+That is what stops a directory becoming a fork of every page in it. It also
+means we *can* host a page that has no other home — most datasets have none —
+without breaking anything, because a hosted page's `contribute` really is this
+repository. See CONTRIBUTING.
 
 ## Several pages will document the same dataset. That is correct.
 
